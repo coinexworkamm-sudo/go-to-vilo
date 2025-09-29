@@ -1,0 +1,38 @@
+<!doctype html>
+<html lang="fa">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<title>در حال انتقال…</title>
+<style>
+body{font-family:Tahoma,Arial,Helvetica,sans-serif;display:flex;min-height:100vh;align-items:center;justify-content:center;background:#f7f7f7;margin:0}
+.card{background:#fff;padding:28px;border-radius:12px;box-shadow:0 6px 18px rgba(0,0,0,0.08);text-align:center;max-width:480px}
+.btn{display:inline-block;margin-top:18px;padding:12px 22px;border-radius:8px;text-decoration:none;border:0;font-weight:600}
+.btn-primary{background:#1368d6;color:#fff}
+.muted{color:#666;margin-top:8px;font-size:13px;word-break:break-all}
+.count{font-weight:700;margin-top:10px}
+</style>
+<script>
+const target = "https://vliv.lol";
+let seconds = 5;
+function tick(){
+	document.getElementById('secs').textContent = seconds;
+	if(seconds <= 0){
+		window.location.href = target;
+	} else {
+		seconds--;
+		setTimeout(tick, 1000);
+	}
+}
+window.addEventListener('DOMContentLoaded', tick);
+</script>
+</head>
+<body>
+<div class="card">
+<h2>در حال انتقال به سایت اصلی</h2>
+<p class="muted">بعد از <span class="count" id="secs">5</span> ثانیه به سایت منتقل می‌شوید.</p>
+<a class="btn btn-primary" id="goBtn" href="https://vliv.lol" rel="noopener noreferrer" target="_blank">هم‌اکنون برو</a>
+<p class="muted">اگر ریدایرکت خودکار کار نکرد، روی لینک زیر بزنید:<br><a id="direct" href="https://vliv.lol" target="_blank" rel="noopener noreferrer">https://vliv.lol</a></p>
+</div>
+</body>
+</html>
